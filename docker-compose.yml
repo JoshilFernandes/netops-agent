@@ -1,0 +1,27 @@
+version: "3.9"
+services:
+  network-monitoring-api:
+    build: .
+    command: python -m uvicorn services.network_monitoring_api:app --host 0.0.0.0 --port 8001
+    ports:
+      - "8001:8001"
+
+  ticketing-api:
+    build: .
+    command: python -m uvicorn services.ticketing_api:app --host 0.0.0.0 --port 8002
+    ports:
+      - "8002:8002"
+
+  orchestrator:
+    build: .
+    command: python -m uvicorn orchestrator.main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    environment:
+      - NETWORK_API_BASE=http://network-monitoring-api:8001
+      - TICKETING_API_BASE=http://ticketing-api:8002
+      - LLM_PROVIDER=${LLM_PROVIDER:-mock}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+    depends_on:
+      - network-monitoring-api
+      - ticketing-api

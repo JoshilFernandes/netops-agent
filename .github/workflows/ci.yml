@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test-and-eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build knowledge base index
+        run: PYTHONPATH=. python scripts/build_kb.py
+
+      - name: Start mock backend services
+        run: |
+          PYTHONPATH=. nohup python -m uvicorn services.network_monitoring_api:app --port 8001 &
+          PYTHONPATH=. nohup python -m uvicorn services.ticketing_api:app --port 8002 &
+          sleep 3
+
+      - name: Run unit + integration tests
+        run: PYTHONPATH=. pytest tests/ -v
+
+      - name: Run agent evaluation suite (quality gate)
+        run: PYTHONPATH=. python evals/run_evals.py

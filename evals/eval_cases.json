@@ -1,0 +1,56 @@
+[
+  {
+    "id": "case-fiber-outage",
+    "node_id": "node-fiber-cut-berlin-04",
+    "raw_alert_text": "Total signal loss reported on fiber segment, node shows DOWN, customers reporting complete outage in the area.",
+    "expected_category": "physical_layer",
+    "expected_severity": "critical",
+    "expected_source_doc": "fiber_outage.md",
+    "expect_ticket": true
+  },
+  {
+    "id": "case-bgp-flap",
+    "node_id": "node-bgp-flap-hannover-11",
+    "raw_alert_text": "Router is repeatedly flapping its BGP session with a peer, intermittent packet loss reported by customers.",
+    "expected_category": "routing",
+    "expected_severity": "high",
+    "expected_source_doc": "bgp_flapping.md",
+    "expect_ticket": true
+  },
+  {
+    "id": "case-dns-failure",
+    "node_id": "node-dns-resolver-01",
+    "raw_alert_text": "Multiple customers report they cannot resolve certain websites, resolver logs show elevated NXDOMAIN rate.",
+    "expected_category": "application_layer",
+    "expected_severity": "medium",
+    "expected_source_doc": "dns_resolution_failure.md",
+    "expect_ticket": false
+  },
+  {
+    "id": "case-congestion",
+    "node_id": "node-congestion-munich-02",
+    "raw_alert_text": "Customers reporting slow speeds during peak hours, link utilization consistently above 90 percent.",
+    "expected_category": "capacity",
+    "expected_severity": "medium",
+    "expected_source_doc": "network_congestion.md",
+    "expect_ticket": false
+  },
+  {
+    "id": "case-hardware-failure",
+    "node_id": "node-hw-failure-duesseldorf-07",
+    "raw_alert_text": "Core router stopped responding to SNMP polling entirely, heartbeat lost, power supply status unknown.",
+    "expected_category": "hardware",
+    "expected_severity": "critical",
+    "expected_source_doc": "hardware_failure.md",
+    "expect_ticket": true
+  },
+  {
+    "id": "case-vpn-issue",
+    "node_id": "node-vpn-issue-guetersloh-03",
+    "raw_alert_text": "Enterprise customer's site-to-site VPN tunnel keeps renegotiating and dropping, IKE phase failing.",
+    "expected_category": "enterprise_services",
+    "expected_severity": "medium",
+    "expected_source_doc": "vpn_connectivity_issue.md",
+    "expect_ticket": false
+  }
+]

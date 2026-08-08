@@ -1,0 +1,107 @@
+{
+  "pass_rate": 1.0,
+  "results": [
+    {
+      "case_id": "case-fiber-outage",
+      "passed": true,
+      "checks": {
+        "category_correct": true,
+        "severity_correct": true,
+        "retrieval_correct": true,
+        "routing_correct": true
+      },
+      "latency_ms": 5031.5,
+      "actual_category": "physical_layer",
+      "actual_severity": "critical",
+      "retrieved_sources": [
+        "fiber_outage.md"
+      ],
+      "ticket_created": true
+    },
+    {
+      "case_id": "case-bgp-flap",
+      "passed": true,
+      "checks": {
+        "category_correct": true,
+        "severity_correct": true,
+        "retrieval_correct": true,
+        "routing_correct": true
+      },
+      "latency_ms": 4727.3,
+      "actual_category": "routing",
+      "actual_severity": "high",
+      "retrieved_sources": [
+        "bgp_flapping.md"
+      ],
+      "ticket_created": true
+    },
+    {
+      "case_id": "case-dns-failure",
+      "passed": true,
+      "checks": {
+        "category_correct": true,
+        "severity_correct": true,
+        "retrieval_correct": true,
+        "routing_correct": true
+      },
+      "latency_ms": 2388.2,
+      "actual_category": "application_layer",
+      "actual_severity": "medium",
+      "retrieved_sources": [
+        "dns_resolution_failure.md"
+      ],
+      "ticket_created": false
+    },
+    {
+      "case_id": "case-congestion",
+      "passed": true,
+      "checks": {
+        "category_correct": true,
+        "severity_correct": true,
+        "retrieval_correct": true,
+        "routing_correct": true
+      },
+      "latency_ms": 2389.6,
+      "actual_category": "capacity",
+      "actual_severity": "medium",
+      "retrieved_sources": [
+        "network_congestion.md"
+      ],
+      "ticket_created": false
+    },
+    {
+      "case_id": "case-hardware-failure",
+      "passed": true,
+      "checks": {
+        "category_correct": true,
+        "severity_correct": true,
+        "retrieval_correct": true,
+        "routing_correct": true
+      },
+      "latency_ms": 4761.5,
+      "actual_category": "hardware",
+      "actual_severity": "critical",
+      "retrieved_sources": [
+        "hardware_failure.md"
+      ],
+      "ticket_created": true
+    },
+    {
+      "case_id": "case-vpn-issue",
+      "passed": true,
+      "checks": {
+        "category_correct": true,
+        "severity_correct": true,
+        "retrieval_correct": true,
+        "routing_correct": true
+      },
+      "latency_ms": 2416.1,
+      "actual_category": "enterprise_services",
+      "actual_severity": "medium",
+      "retrieved_sources": [
+        "vpn_connectivity_issue.md"
+      ],
+      "ticket_created": false
+    }
+  ]
+}
