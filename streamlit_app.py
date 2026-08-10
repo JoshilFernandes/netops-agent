@@ -20,7 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import streamlit as st
 import uvicorn
 
-st.set_page_config(page_title="NetOps Agent — Reply Portfolio Demo", page_icon="🛰️", layout="wide")
+st.set_page_config(page_title="NetOps Agent — Portfolio Demo", page_icon="🛰️", layout="wide")
 
 
 @st.cache_resource
@@ -74,7 +74,7 @@ PRESET_SCENARIOS = {
 st.title("🛰️ NetOps Agent")
 st.markdown(
     "Agentic incident triage & resolution assistant for telecom network operations. "
-    "Built as a portfolio project for the **Agentic Software Engineer** role at Reply — "
+    "Built as a portfolio project "
     "demonstrates a LangGraph multi-agent flow with tool use (live telemetry + ticketing APIs), "
     "RAG retrieval over runbooks (ChromaDB), and structured evaluation/observability. "
     "Runs fully offline with a deterministic mock LLM by default."
