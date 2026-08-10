@@ -2,7 +2,6 @@
 
 **Agentic incident triage & resolution assistant for telecom network operations.**
 
-A portfolio project built for the *Agentic Software Engineer (m/w/d)* role at **Reply**.
 The use case — automated triage of network incidents using live telemetry, a runbook
 knowledge base, and an agentic ticketing workflow — mirrors the kind of Delivery Squad
 work Reply does for telecom/network operator clients, one of its core historical
