@@ -51,7 +51,7 @@ important for the kind of client-facing, auditable systems a consultancy deliver
 | Tests | **pytest** | Unit tests per tool, integration tests for the full graph, API-level tests via `TestClient` |
 | Evaluations | Custom eval harness (`evals/run_evals.py`) | Checks triage accuracy, retrieval relevance, and routing correctness independently across 6 scenarios; usable as a CI quality gate |
 | Observability | Custom JSONL tracer + Streamlit dashboard | Structured per-node spans and tool-call logs; swappable for LangSmith/OpenTelemetry in production |
-| Demo UI | **Gradio** | Consistent with the free-hosting approach (Hugging Face Spaces) used across this portfolio |
+| Demo UI | **streamlit** | Consistent with the free-hosting approach  |
 | CI/CD | **GitHub Actions** | Runs the full test + eval suite on every push |
 | Containerization | **Docker / docker-compose** | Three-service deployment (orchestrator + 2 mock backends) |
 
