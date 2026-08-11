@@ -24,6 +24,23 @@ st.set_page_config(page_title="NetOps Agent — Portfolio Demo", page_icon="🛰
 
 
 @st.cache_resource
+def _ensure_kb_index():
+    """Builds the ChromaDB vector index on first app startup if it doesn't
+    already exist. This is what makes the app self-contained on a fresh
+    deployment (e.g. Streamlit Cloud) where kb_store/ isn't committed to
+    git (it's a generated artifact, not source) — the app builds it itself
+    instead of depending on a manual `python scripts/build_kb.py` step
+    having been run beforehand."""
+    from agent.kb import build_index
+
+    build_index()
+    return True
+
+
+_ensure_kb_index()
+
+
+@st.cache_resource
 def _start_mock_services():
     """Boots the two mock FastAPI services in-process, once per app
     session, so this is a single deployable Streamlit app with no
@@ -74,10 +91,9 @@ PRESET_SCENARIOS = {
 st.title("🛰️ NetOps Agent")
 st.markdown(
     "Agentic incident triage & resolution assistant for telecom network operations. "
-    "Built as a portfolio project "
-    "demonstrates a LangGraph multi-agent flow with tool use (live telemetry + ticketing APIs), "
-    "RAG retrieval over runbooks (ChromaDB), and structured evaluation/observability. "
-    "Runs fully offline with a deterministic mock LLM by default."
+    "A portfolio project demonstrating a LangGraph multi-agent flow with tool use "
+    "(live telemetry + ticketing APIs), RAG retrieval over runbooks (ChromaDB), and "
+    "structured evaluation/observability. Runs fully offline with a deterministic mock LLM by default."
 )
 st.markdown(
     "[GitHub repo](https://github.com/JoshilFernandes/netops-agent) &nbsp;·&nbsp; "
