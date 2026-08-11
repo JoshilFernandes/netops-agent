@@ -1,7 +1,7 @@
 # Core
 fastapi==0.115.0
 uvicorn[standard]==0.30.6
-pydantic==2.9.2
+pydantic>=2.9
 python-dotenv==1.0.1
 
 # Agentic orchestration
@@ -17,9 +17,7 @@ numpy
 anthropic==0.36.0
 groq==0.11.0
 
-# UI / dashboard
-gradio==4.44.1
-huggingface_hub<0.25.0
+# UI (Streamlit demo + observability dashboard)
 streamlit>=1.38
 pandas>=2.0
 
