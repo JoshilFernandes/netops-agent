@@ -10,7 +10,7 @@ langchain==0.3.4
 
 # Vector store / retrieval
 chromadb==0.5.15
-scikit-learn==1.5.2
+scikit-learn>=1.5
 numpy
 
 # LLM providers
@@ -20,7 +20,7 @@ groq==0.11.0
 # UI / dashboard
 gradio==4.44.1
 huggingface_hub<0.25.0
-streamlit==1.38.0
+streamlit>=1.38
 pandas>=2.0
 
 # Testing / evals
